@@ -2,29 +2,27 @@ import React from 'react';
 import STORE from './store.js'
 import Card from './Card.js'
 
-function List(props) {
+function List(prop) {
+    
+    const cardArray = prop.cards.map(function(card) {
+        return <Card key={card.id} title={card.title} content={card.content}/>
+    })
 
-    const listHeaderTitles = STORE.lists.map(function (listItem) {
-        return (
-        <section className="List" key={listItem.id}> 
-        <header className="List-header">
-            <h1>{listItem.header}</h1>
-        </header> 
-        <div className="List-cards">
-                {props.card}
-        </div>
-        </section>);
-    }); // ["First list", "Second list", "Third list", "Fourth list"]
-   
-    console.log(listHeaderTitles)
 
     return (
-        
-        <div>
-        
-        {listHeaderTitles}
-                    
-        </div>
+        <section className="List">
+            <header className="List-header">
+            <h2>{prop.header}</h2>
+            </header>
+
+            <div className="List-cards">
+            {cardArray}
+            <button type="button" className="List-add-button">
+                + Add Random Card
+             </button>
+            </div>
+            
+        </section>
     );
 }
 

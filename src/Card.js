@@ -1,13 +1,12 @@
 import React from 'react';
-import STORE from './store.js'
 
-function Card(props) {
-    const cardInfo = STORE.allCards.
+function Card(prop) {
 
     return(
         <div className="Card">
-            <h3>{props.title}</h3>
-            <p>{props.content}</p>
+            <button type="button">delete</button>
+            <h3>{prop.title}</h3>
+            <p>{prop.content}</p>
         </div>
     );
 }

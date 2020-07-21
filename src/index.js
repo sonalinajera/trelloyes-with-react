@@ -7,4 +7,4 @@ import './app.css'
 import './card.css'
 import './list.css'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App store={STORE}/>, document.getElementById('root'));
